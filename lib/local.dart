@@ -15,10 +15,10 @@ class Data {
   static loadSets() {
     if (pref.containsKey('Sets')) {
       var setsString = pref.getString("Sets") ?? "";
-
+      sets = [];
       var setsJson = jsonDecode(setsString);
-
       for (var setJson in setsJson['Sets']) {
+        
         sets.add(SetModel.fromJson(setJson));
       }
     } else {

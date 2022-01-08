@@ -22,7 +22,7 @@ class _SetsPageState extends State<SetsPage> {
                   context: context,
                   builder: (BuildContext) {
                     return AddSetDialog(onComplete: () {
-                      setState(() {});
+                      setState(() { Data.saveSets(); });
                     });
                   });
             },

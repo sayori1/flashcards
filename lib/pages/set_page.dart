@@ -29,8 +29,7 @@ class _SetPageState extends State<SetPage> {
                     return AddCardDialog(
                         set: widget.set,
                         onComplete: () {
-                          setState(() {
-                            setState(() {});
+                          setState(() {Data.saveSets();
                           });
                         });
                   });
@@ -42,7 +41,7 @@ class _SetPageState extends State<SetPage> {
               card: item,
               onDelete: () {
                 widget.set.cards.remove(item);
-                setState(() {});
+                setState(() { Data.saveSets();});
               });
         }).toList()));
   }
