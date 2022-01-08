@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 
+import '../local.dart';
 import 'sets_page.dart';
 
 class Home extends StatefulWidget {
@@ -10,8 +11,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  
   @override
   Widget build(BuildContext context) {
-    return SetsPage();
+    
+    return FutureBuilder(
+      future: Data.init(),
+      builder: (context, snapshot) {
+        if(snapshot.hasData)
+          return SetsPage();
+        else{
+          return Scaffold(body: Center(child: CircularProgressIndicator()));
+        }
+      }
+    );
   }
 }

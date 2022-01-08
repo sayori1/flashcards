@@ -10,6 +10,7 @@ class Data {
   static init() async {
     pref = await SharedPreferences.getInstance();
     loadSets();
+    return true;
   }
 
   static loadSets() {
