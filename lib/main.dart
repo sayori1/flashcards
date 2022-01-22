@@ -1,25 +1,15 @@
 import 'package:flashcards/local.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 import 'pages/home_page.dart';
 
 void main() async {
   
-  runApp(const MyApp());
+  runApp(GetMaterialApp(home:Home()
+  ,theme: ThemeData(fontFamily: 'Averta', primarySwatch: Colors.green),
+  ));
+
+  
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: "Robotostab",
-        primarySwatch: Colors.green,
-      ),
-      home: const Home(),
-    );
-  }
-}
